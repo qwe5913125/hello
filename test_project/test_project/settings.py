@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'my_app',
 ]
 
+#преобразует реквест
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -57,8 +58,8 @@ ROOT_URLCONF = 'test_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [], #другие места для расположения template
+        'APP_DIRS': True, #поиск шаблонов внутри приложения в папке template
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

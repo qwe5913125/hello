@@ -6,3 +6,9 @@ from django.http import HttpResponse
 
 def hello_world(request):
     return HttpResponse('Hello_world!')
+
+def index2(request):
+    if request.method == 'GET':
+        return render(request, 'my_app/index.html')
+
+
