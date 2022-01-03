@@ -1,0 +1,45 @@
+{% extends "my_app/_base.html" %}
+{% block content %}
+
+<div>
+    <ul>
+    <h2 class="my-label"> Welcome my guestbook</h2>
+
+
+
+              {% if messages %}
+            <ul class="messages">
+
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}">{{ name}}{{message}}
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+
+
+        {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form action="{% url 'book' %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+
+            <input type="submit" value="Submit">
+        </form>
+    </ul>
+</div>
+{% endblock %}
+

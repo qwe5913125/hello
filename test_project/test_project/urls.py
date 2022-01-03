@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from my_app.views import hello_world, index2
+from my_app.views import hello_world, index2, MyView, MyViewBook
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/', hello_world),
     url(r'^index/', index2),
-
+    url(r'^form/', MyView.as_view(), name='form'),   #имя для обращения из шаблона "template"
+    url(r'^book/', MyViewBook.as_view(), name='book'),
 ]
